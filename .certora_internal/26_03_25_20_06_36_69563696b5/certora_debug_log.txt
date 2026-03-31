@@ -1,0 +1,60 @@
+Saving last configuration file to .certora_internal/26_03_25_20_06_36_69563696b5/run.conf
+There is no TAC file. Going to script CertoraProver/certoraBuild.py to main_with_args()
+main build cache key computed based on {'files': ['src/sstoreMapping.sol:PointSystem'], 'package_version_for_build_cache': 'certora-cli 8.8.1', 'packages': ['forge-std/=lib/forge-std/src', 'forge-std/src/=lib/forge-std/src'], 'packages_path': 'node_modules', 'solc': 'solc', 'solc_allow_path': '.', 'test_condition': 'True'}
+Creating dir /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/.certora_internal/26_03_25_20_06_36_69563696b5/.certora_config
+In /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/certora/specs/sstoreMapping.spec, found the imports: []
+copying spec file /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/certora/specs/sstoreMapping.spec to /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/.certora_internal/26_03_25_20_06_36_69563696b5/.certora_sources/.0_sstoreMapping.spec.spec
+writing /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/.certora_internal/26_03_25_20_06_36_69563696b5/.certora_verify.json
+
+building file src/sstoreMapping.sol
+Running cmd solc --version
+stdout, stderr = .certora_internal/26_03_25_20_06_36_69563696b5/.certora_config/version_check_solc.stdout, .certora_internal/26_03_25_20_06_36_69563696b5/.certora_config/version_check_solc.stderr
+Exitcode 0
+Solc run solc --version time: 0.1397
+Running cmd solc -o ".certora_internal/26_03_25_20_06_36_69563696b5/.certora_config/sstoreMapping.sol_0/" --overwrite --allow-paths ".",.,"lib/forge-std/src/","lib/forge-std/src/" --standard-json
+stdout, stderr = .certora_internal/26_03_25_20_06_36_69563696b5/.certora_config/sstoreMapping.sol_0.standard.stdout.json, .certora_internal/26_03_25_20_06_36_69563696b5/.certora_config/sstoreMapping.sol_0.standard.stderr.json
+Exitcode 0
+Solc run solc -o ".certora_internal/26_03_25_20_06_36_69563696b5/.certora_config/sstoreMapping.sol_0/" --overwrite --allow-paths ".",.,"lib/forge-std/src/","lib/forge-std/src/" --standard-json time: 0.1608
+reading standard json data from .certora_internal/26_03_25_20_06_36_69563696b5/.certora_config/sstoreMapping.sol_0.standard.stdout.json
+collecting worklist for /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/src/sstoreMapping.sol
+Processing dependencies from file /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/src/sstoreMapping.sol
+available keys: dict_keys(['/Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/src/sstoreMapping.sol'])
+Contracts in sstoreMapping.sol_0 (file src/sstoreMapping.sol): ['PointSystem']
+Contracts with their chosen addresses: [(274184521717934524641157099916833587200, '/Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/src/sstoreMapping.sol:PointSystem')]
+Report source list={0: 'src/sstoreMapping.sol'}
+Finding report source file, abs path /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/src/sstoreMapping.sol relative to /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2
+Working on contract PointSystem
+Working on contract PointSystem
+For contracts of primary PointSystem
+finding primary contract address of /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/src/sstoreMapping.sol:PointSystem in [(274184521717934524641157099916833587200, '/Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/src/sstoreMapping.sol:PointSystem')]
+Contracts in SDC sstoreMapping.sol_0: ['PointSystem']
+Building source tree
+Copying /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/src/sstoreMapping.sol to .certora_internal/26_03_25_20_06_36_69563696b5/.certora_sources/src/sstoreMapping.sol
+Copying /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/certora/specs/sstoreMapping.spec to .certora_internal/26_03_25_20_06_36_69563696b5/.certora_sources/certora/specs/sstoreMapping.spec
+Copying /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/foundry.toml to .certora_internal/26_03_25_20_06_36_69563696b5/.certora_sources/foundry.toml
+Copying /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/certora/conf/sstoreMapping.conf to .certora_internal/26_03_25_20_06_36_69563696b5/.certora_sources/certora/conf/sstoreMapping.conf
+Report source list={0: 'src/sstoreMapping.sol'}
+Backing up current .certora_sources to .certora_internal/26_03_25_20_06_36_69563696b5/.certora_sources/.pre_autofinders.0
+Running cmd solc -o ".certora_internal/26_03_25_20_06_36_69563696b5/.certora_config/sstoreMapping.sol_0/" --overwrite --allow-paths "/Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/.certora_internal/26_03_25_20_06_36_69563696b5/.certora_sources",.,"lib/forge-std/src/","lib/forge-std/src/" --standard-json
+stdout, stderr = .certora_internal/26_03_25_20_06_36_69563696b5/.certora_config/sstoreMapping.sol_0.standard.stdout.json, .certora_internal/26_03_25_20_06_36_69563696b5/.certora_config/sstoreMapping.sol_0.standard.stderr.json
+Exitcode 0
+Solc run solc -o ".certora_internal/26_03_25_20_06_36_69563696b5/.certora_config/sstoreMapping.sol_0/" --overwrite --allow-paths "/Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/.certora_internal/26_03_25_20_06_36_69563696b5/.certora_sources",.,"lib/forge-std/src/","lib/forge-std/src/" --standard-json time: 0.15
+reading standard json data from .certora_internal/26_03_25_20_06_36_69563696b5/.certora_config/sstoreMapping.sol_0.standard.stdout.json
+collecting worklist for /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/.certora_internal/26_03_25_20_06_36_69563696b5/.certora_sources/src/sstoreMapping.sol
+Processing dependencies from file /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/.certora_internal/26_03_25_20_06_36_69563696b5/.certora_sources/src/sstoreMapping.sol
+available keys: dict_keys(['/Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/.certora_internal/26_03_25_20_06_36_69563696b5/.certora_sources/src/sstoreMapping.sol'])
+Contracts in sstoreMapping.sol_0 (file .certora_internal/26_03_25_20_06_36_69563696b5/.certora_sources/src/sstoreMapping.sol): ['PointSystem']
+Contracts with their chosen addresses: [(274184521717934524641157099916833587201, '/Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/.certora_internal/26_03_25_20_06_36_69563696b5/.certora_sources/src/sstoreMapping.sol:PointSystem')]
+Report source list={0: 'src/sstoreMapping.sol'}
+Finding report source file, abs path /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/.certora_internal/26_03_25_20_06_36_69563696b5/.certora_sources/src/sstoreMapping.sol relative to .certora_internal/26_03_25_20_06_36_69563696b5/.certora_sources
+Working on contract PointSystem
+Working on contract PointSystem
+For contracts of primary PointSystem
+finding primary contract address of /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/.certora_internal/26_03_25_20_06_36_69563696b5/.certora_sources/src/sstoreMapping.sol:PointSystem in [(274184521717934524641157099916833587201, '/Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/.certora_internal/26_03_25_20_06_36_69563696b5/.certora_sources/src/sstoreMapping.sol:PointSystem')]
+Contracts in SDC sstoreMapping.sol_0: ['PointSystem']
+Backing up instrumented .certora_sources to .certora_internal/26_03_25_20_06_36_69563696b5/.certora_sources/.post_autofinders.0
+Rolling back .certora_sources to .certora_internal/26_03_25_20_06_36_69563696b5/.certora_sources/.pre_autofinders.0 version
+Libraries to add = []
+writing file /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/.certora_internal/26_03_25_20_06_36_69563696b5/.certora_build.json
+writing file /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/.certora_internal/26_03_25_20_06_36_69563696b5/.certora_build_output_props.json
+writing /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/.certora_internal/26_03_25_20_06_36_69563696b5/.certora_verify.json

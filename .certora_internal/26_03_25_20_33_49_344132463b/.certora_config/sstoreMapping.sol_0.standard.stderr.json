@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "/Users/triady-mac/.local/bin/solc", line 3, in <module>
+    from solc_select.__main__ import solc
+  File "/Users/triady-mac/.local/pipx/venvs/solc-select/lib/python3.13/site-packages/solc_select/__main__.py", line 12, in <module>
+    from .solc_select import (
+    ...<11 lines>...
+    )
+  File "/Users/triady-mac/.local/pipx/venvs/solc-select/lib/python3.13/site-packages/solc_select/solc_select.py", line 30, in <module>
+    from .utils import (
+    ...<5 lines>...
+    )
+  File "/Users/triady-mac/.local/pipx/venvs/solc-select/lib/python3.13/site-packages/solc_select/utils.py", line 7, in <module>
+    import requests
+  File "/Users/triady-mac/.local/pipx/venvs/solc-select/lib/python3.13/site-packages/requests/__init__.py", line 45, in <module>
+    from .exceptions import RequestsDependencyWarning
+  File "/Users/triady-mac/.local/pipx/venvs/solc-select/lib/python3.13/site-packages/requests/exceptions.py", line 9, in <module>
+    from .compat import JSONDecodeError as CompatJSONDecodeError
+  File "/Users/triady-mac/.local/pipx/venvs/solc-select/lib/python3.13/site-packages/requests/compat.py", line 74, in <module>
+    from http import cookiejar as cookielib
+  File "/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/cookiejar.py", line 36, in <module>
+    import urllib.parse, urllib.request
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1118, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1218, in get_data
+KeyboardInterrupt

@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "Counter",
+    "specfile": "certora/specs/CountIncrement.spec",
+    "specfileOrigRelpath": "certora/specs/CountIncrement.spec",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

@@ -1,0 +1,13 @@
+{
+    "topics": [
+        {
+            "name": "type_check",
+            "messages": [
+                {
+                    "message": "Error in spec file (SolmateErc20.spec:24:37): Syntax error: unexpected token near `(`",
+                    "location": []
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,227 @@
+{
+    "Counter_00000000ce4604a0000000000000000000000001": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000001",
+                "allMethods": [
+                    {
+                        "contractName": "Counter",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "src/Counter.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 240,
+                            "size": 49
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Counter",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "increment",
+                        "notpayable": true,
+                        "originalFile": "src/Counter.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "d09de08a",
+                        "sourceBytes": {
+                            "begin": 594,
+                            "size": 64
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Counter",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "resetCounter",
+                        "notpayable": true,
+                        "originalFile": "src/Counter.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "dbdf7fce",
+                        "sourceBytes": {
+                            "begin": 744,
+                            "size": 69
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "608060405234801561000f575f80fd5b5060043610610034575f3560e01c8063d09de08a14610038578063dbdf7fce14610042575b5f80fd5b61004061004c565b005b61004a6100f2565b005b5f8054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146100d9576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016100d0906101e2565b60405180910390fd5b60015f8154809291906100eb90610236565b9190505550565b5f8054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461017f576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610176906101e2565b60405180910390fd5b5f600181905550565b5f82825260208201905092915050565b7f436f756e7465723a2063616c6c6572206973206e6f7420746865206f776e65725f82015250565b5f6101cc602083610188565b91506101d782610198565b602082019050919050565b5f6020820190508181035f8301526101f9816101c0565b9050919050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b5f819050919050565b5f6102408261022d565b91507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff820361027257610271610200565b5b60018201905091905056fea264697066735822122052902ed8efba67e5f4d72e0661efa2d8adfdd0ea876d0a45e5913b00ecc9f49564736f6c63430008190033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.8.25",
+                "constructorBytecode": "6080604052348015600e575f80fd5b50335f806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506102b38061005b5f395ff3fe608060405234801561000f575f80fd5b5060043610610034575f3560e01c8063d09de08a14610038578063dbdf7fce14610042575b5f80fd5b61004061004c565b005b61004a6100f2565b005b5f8054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146100d9576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016100d0906101e2565b60405180910390fd5b60015f8154809291906100eb90610236565b9190505550565b5f8054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461017f576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610176906101e2565b60405180910390fd5b5f600181905550565b5f82825260208201905092915050565b7f436f756e7465723a2063616c6c6572206973206e6f7420746865206f776e65725f82015250565b5f6101cc602083610188565b91506101d782610198565b602082019050919050565b5f6020820190508181035f8301526101f9816101c0565b9050919050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b5f819050919050565b5f6102408261022d565b91507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff820361027257610271610200565b5b60018201905091905056fea264697066735822122052902ed8efba67e5f4d72e0661efa2d8adfdd0ea876d0a45e5913b00ecc9f49564736f6c63430008190033",
+                "constructorSrcmap": "60:755:0:-:0;;;240:49;;;;;;;;;;272:10;264:5;;:18;;;;;;;;;;;;;;;;;;60:755;;;;;;",
+                "extensionContracts": [],
+                "file": "src/Counter.sol",
+                "immutables": [],
+                "internalFuncs": [],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [
+                    448,
+                    512,
+                    482,
+                    392,
+                    76,
+                    557,
+                    242,
+                    566,
+                    408
+                ],
+                "internalFunctions": {},
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {},
+                "methods": [
+                    {
+                        "contractName": "Counter",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "src/Counter.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 240,
+                            "size": 49
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Counter",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "increment",
+                        "notpayable": true,
+                        "originalFile": "src/Counter.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "d09de08a",
+                        "sourceBytes": {
+                            "begin": 594,
+                            "size": 64
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Counter",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "resetCounter",
+                        "notpayable": true,
+                        "originalFile": "src/Counter.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "dbdf7fce",
+                        "sourceBytes": {
+                            "begin": 744,
+                            "size": 69
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "Counter",
+                "original_file": "src/Counter.sol",
+                "solidityTypes": [],
+                "sourceBytes": {
+                    "begin": 60,
+                    "size": 755
+                },
+                "srcmap": "60:755:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;594:64;;;:::i;:::-;;744:69;;;:::i;:::-;;594:64;417:5;;;;;;;;;;403:19;;:10;:19;;;395:64;;;;;;;;;;;;:::i;:::-;;;;;;;;;644:5:::1;;:7;;;;;;;;;:::i;:::-;;;;;;594:64::o:0;744:69::-;417:5;;;;;;;;;;403:19;;:10;:19;;;395:64;;;;;;;;;;;;:::i;:::-;;;;;;;;;805:1:::1;797:5;:9;;;;744:69::o:0;7:169:1:-;91:11;125:6;120:3;113:19;165:4;160:3;156:14;141:29;;7:169;;;;:::o;182:182::-;322:34;318:1;310:6;306:14;299:58;182:182;:::o;370:366::-;512:3;533:67;597:2;592:3;533:67;:::i;:::-;526:74;;609:93;698:3;609:93;:::i;:::-;727:2;722:3;718:12;711:19;;370:366;;;:::o;742:419::-;908:4;946:2;935:9;931:18;923:26;;995:9;989:4;985:20;981:1;970:9;966:17;959:47;1023:131;1149:4;1023:131;:::i;:::-;1015:139;;742:419;;;:::o;1167:180::-;1215:77;1212:1;1205:88;1312:4;1309:1;1302:15;1336:4;1333:1;1326:15;1353:77;1390:7;1419:5;1408:16;;1353:77;;;:::o;1436:233::-;1475:3;1498:24;1516:5;1498:24;:::i;:::-;1489:33;;1544:66;1537:5;1534:77;1531:103;;1614:18;;:::i;:::-;1531:103;1661:1;1654:5;1650:13;1643:20;;1436:233;;;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 3,
+                            "contract": "/Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/.certora_internal/26_03_24_20_29_04_9684906e4a/.certora_sources/src/Counter.sol:Counter",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "20",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "address",
+                                "type": "Primitive"
+                            },
+                            "label": "owner",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_address"
+                        },
+                        {
+                            "astId": 5,
+                            "contract": "/Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/.certora_internal/26_03_24_20_29_04_9684906e4a/.certora_sources/src/Counter.sol:Counter",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "count",
+                            "offset": 0,
+                            "slot": "1",
+                            "type": "t_uint256"
+                        }
+                    ],
+                    "types": {
+                        "t_address": {
+                            "encoding": "inplace",
+                            "label": "address",
+                            "numberOfBytes": "20"
+                        },
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "Counter",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000001",
+        "prototypeFor": [],
+        "sdc_name": "Counter.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "src/Counter.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}
