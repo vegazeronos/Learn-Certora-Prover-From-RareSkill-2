@@ -1,0 +1,21 @@
+{
+    "topics": [
+        {
+            "name": "type_check",
+            "messages": [
+                {
+                    "message": "Error in spec file (WETH_Solady.spec:2:40): Syntax error: unexpected token near `;`",
+                    "location": []
+                },
+                {
+                    "message": "Error in spec file (WETH_Solady.spec:26:41): Syntax error: unexpected token near `=`",
+                    "location": []
+                },
+                {
+                    "message": "Error in spec file (WETH_Solady.spec:27:38): Syntax error: unexpected token near `=`",
+                    "location": []
+                }
+            ]
+        }
+    ]
+}

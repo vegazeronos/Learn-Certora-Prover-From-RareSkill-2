@@ -1,0 +1,12 @@
+Saving last configuration file to .certora_internal/26_03_31_13_55_03_1748081ab3/run.conf
+There is no TAC file. Going to script CertoraProver/certoraBuild.py to main_with_args()
+main build cache key computed based on {'files': ['src/WETH_Solady.sol:WETH'], 'package_version_for_build_cache': 'certora-cli 8.8.1', 'packages': ['forge-std/=lib/forge-std/src', 'forge-std/src/=lib/forge-std/src'], 'packages_path': 'node_modules', 'solc': 'solc', 'solc_allow_path': '.', 'test_condition': 'True'}
+Creating dir /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/.certora_internal/26_03_31_13_55_03_1748081ab3/.certora_config
+In /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/certora/specs/WETH_Solady.spec, found the imports: []
+copying spec file /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/certora/specs/WETH_Solady.spec to /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/.certora_internal/26_03_31_13_55_03_1748081ab3/.certora_sources/.0_WETH_Solady.spec.spec
+writing /Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/.certora_internal/26_03_31_13_55_03_1748081ab3/.certora_verify.json
+Failed to run Certora Prover typechecker locally.
+Please check the errors below for problems in the specifications (.spec files) or the prover_args defined in the .conf file.
+[main] ERROR ALWAYS - Found errors in certora/specs/WETH_Solady.spec:
+[main] ERROR ALWAYS - Error in spec file (WETH_Solady.spec:1:1): Syntax error: unexpected token near `method`
+build failed

@@ -105,17 +105,14 @@ abstract contract ERC20 {
     uint256 private constant _NONCES_SLOT_SEED_WITH_SIGNATURE_PREFIX = 0x383775081901;
 
     /// @dev `keccak256("EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)")`.
-    bytes32 private constant _DOMAIN_TYPEHASH =
-        0x8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b39400f;
+    bytes32 private constant _DOMAIN_TYPEHASH = 0x8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b39400f;
 
     /// @dev `keccak256("1")`.
     /// If you need to use a different version, override `_versionHash`.
-    bytes32 private constant _DEFAULT_VERSION_HASH =
-        0xc89efdaa54c0f20c7adf612882df0950f5a951637e0307cdcb4c672f298b8bc6;
+    bytes32 private constant _DEFAULT_VERSION_HASH = 0xc89efdaa54c0f20c7adf612882df0950f5a951637e0307cdcb4c672f298b8bc6;
 
     /// @dev `keccak256("Permit(address owner,address spender,uint256 value,uint256 nonce,uint256 deadline)")`.
-    bytes32 private constant _PERMIT_TYPEHASH =
-        0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9;
+    bytes32 private constant _PERMIT_TYPEHASH = 0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9;
 
     /// @dev The canonical Permit2 address.
     /// For signature-based allowance granting for single transaction ERC20 `transferFrom`.
@@ -162,12 +159,7 @@ abstract contract ERC20 {
     }
 
     /// @dev Returns the amount of tokens that `spender` can spend on behalf of `owner`.
-    function allowance(address owner, address spender)
-        public
-        view
-        virtual
-        returns (uint256 result)
-    {
+    function allowance(address owner, address spender) public view virtual returns (uint256 result) {
         if (_givePermit2InfiniteAllowance()) {
             if (spender == _PERMIT2) return type(uint256).max;
         }
@@ -386,87 +378,87 @@ abstract contract ERC20 {
     /// authorized by a signed approval by `owner`.
     ///
     /// Emits a {Approval} event.
-    function permit(
-        address owner,
-        address spender,
-        uint256 value,
-        uint256 deadline,
-        uint8 v,
-        bytes32 r,
-        bytes32 s
-    ) public virtual {
-        if (_givePermit2InfiniteAllowance()) {
-            /// @solidity memory-safe-assembly
-            assembly {
-                // If `spender == _PERMIT2 && value != type(uint256).max`.
-                if iszero(or(xor(shr(96, shl(96, spender)), _PERMIT2), iszero(not(value)))) {
-                    mstore(0x00, 0x3f68539a) // `Permit2AllowanceIsFixedAtInfinity()`.
-                    revert(0x1c, 0x04)
-                }
-            }
-        }
-        bytes32 nameHash = _constantNameHash();
-        //  We simply calculate it on-the-fly to allow for cases where the `name` may change.
-        if (nameHash == bytes32(0)) nameHash = keccak256(bytes(name()));
-        bytes32 versionHash = _versionHash();
-        /// @solidity memory-safe-assembly
-        assembly {
-            // Revert if the block timestamp is greater than `deadline`.
-            if gt(timestamp(), deadline) {
-                mstore(0x00, 0x1a15a3cc) // `PermitExpired()`.
-                revert(0x1c, 0x04)
-            }
-            let m := mload(0x40) // Grab the free memory pointer.
-            // Clean the upper 96 bits.
-            owner := shr(96, shl(96, owner))
-            spender := shr(96, shl(96, spender))
-            // Compute the nonce slot and load its value.
-            mstore(0x0e, _NONCES_SLOT_SEED_WITH_SIGNATURE_PREFIX)
-            mstore(0x00, owner)
-            let nonceSlot := keccak256(0x0c, 0x20)
-            let nonceValue := sload(nonceSlot)
-            // Prepare the domain separator.
-            mstore(m, _DOMAIN_TYPEHASH)
-            mstore(add(m, 0x20), nameHash)
-            mstore(add(m, 0x40), versionHash)
-            mstore(add(m, 0x60), chainid())
-            mstore(add(m, 0x80), address())
-            mstore(0x2e, keccak256(m, 0xa0))
-            // Prepare the struct hash.
-            mstore(m, _PERMIT_TYPEHASH)
-            mstore(add(m, 0x20), owner)
-            mstore(add(m, 0x40), spender)
-            mstore(add(m, 0x60), value)
-            mstore(add(m, 0x80), nonceValue)
-            mstore(add(m, 0xa0), deadline)
-            mstore(0x4e, keccak256(m, 0xc0))
-            // Prepare the ecrecover calldata.
-            mstore(0x00, keccak256(0x2c, 0x42))
-            mstore(0x20, and(0xff, v))
-            mstore(0x40, r)
-            mstore(0x60, s)
-            let t := staticcall(gas(), 1, 0x00, 0x80, 0x20, 0x20)
-            // If the ecrecover fails, the returndatasize will be 0x00,
-            // `owner` will be checked if it equals the hash at 0x00,
-            // which evaluates to false (i.e. 0), and we will revert.
-            // If the ecrecover succeeds, the returndatasize will be 0x20,
-            // `owner` will be compared against the returned address at 0x20.
-            if iszero(eq(mload(returndatasize()), owner)) {
-                mstore(0x00, 0xddafbaef) // `InvalidPermit()`.
-                revert(0x1c, 0x04)
-            }
-            // Increment and store the updated nonce.
-            sstore(nonceSlot, add(nonceValue, t)) // `t` is 1 if ecrecover succeeds.
-            // Compute the allowance slot and store the value.
-            // The `owner` is already at slot 0x20.
-            mstore(0x40, or(shl(160, _ALLOWANCE_SLOT_SEED), spender))
-            sstore(keccak256(0x2c, 0x34), value)
-            // Emit the {Approval} event.
-            log3(add(m, 0x60), 0x20, _APPROVAL_EVENT_SIGNATURE, owner, spender)
-            mstore(0x40, m) // Restore the free memory pointer.
-            mstore(0x60, 0) // Restore the zero pointer.
-        }
-    }
+    // function permit(
+    //     address owner,
+    //     address spender,
+    //     uint256 value,
+    //     uint256 deadline,
+    //     uint8 v,
+    //     bytes32 r,
+    //     bytes32 s
+    // ) public virtual {
+    //     if (_givePermit2InfiniteAllowance()) {
+    //         /// @solidity memory-safe-assembly
+    //         assembly {
+    //             // If `spender == _PERMIT2 && value != type(uint256).max`.
+    //             if iszero(or(xor(shr(96, shl(96, spender)), _PERMIT2), iszero(not(value)))) {
+    //                 mstore(0x00, 0x3f68539a) // `Permit2AllowanceIsFixedAtInfinity()`.
+    //                 revert(0x1c, 0x04)
+    //             }
+    //         }
+    //     }
+    //     bytes32 nameHash = _constantNameHash();
+    //     //  We simply calculate it on-the-fly to allow for cases where the `name` may change.
+    //     if (nameHash == bytes32(0)) nameHash = keccak256(bytes(name()));
+    //     bytes32 versionHash = _versionHash();
+    //     /// @solidity memory-safe-assembly
+    //     assembly {
+    //         // Revert if the block timestamp is greater than `deadline`.
+    //         if gt(timestamp(), deadline) {
+    //             mstore(0x00, 0x1a15a3cc) // `PermitExpired()`.
+    //             revert(0x1c, 0x04)
+    //         }
+    //         let m := mload(0x40) // Grab the free memory pointer.
+    //         // Clean the upper 96 bits.
+    //         owner := shr(96, shl(96, owner))
+    //         spender := shr(96, shl(96, spender))
+    //         // Compute the nonce slot and load its value.
+    //         mstore(0x0e, _NONCES_SLOT_SEED_WITH_SIGNATURE_PREFIX)
+    //         mstore(0x00, owner)
+    //         let nonceSlot := keccak256(0x0c, 0x20)
+    //         let nonceValue := sload(nonceSlot)
+    //         // Prepare the domain separator.
+    //         mstore(m, _DOMAIN_TYPEHASH)
+    //         mstore(add(m, 0x20), nameHash)
+    //         mstore(add(m, 0x40), versionHash)
+    //         mstore(add(m, 0x60), chainid())
+    //         mstore(add(m, 0x80), address())
+    //         mstore(0x2e, keccak256(m, 0xa0))
+    //         // Prepare the struct hash.
+    //         mstore(m, _PERMIT_TYPEHASH)
+    //         mstore(add(m, 0x20), owner)
+    //         mstore(add(m, 0x40), spender)
+    //         mstore(add(m, 0x60), value)
+    //         mstore(add(m, 0x80), nonceValue)
+    //         mstore(add(m, 0xa0), deadline)
+    //         mstore(0x4e, keccak256(m, 0xc0))
+    //         // Prepare the ecrecover calldata.
+    //         mstore(0x00, keccak256(0x2c, 0x42))
+    //         mstore(0x20, and(0xff, v))
+    //         mstore(0x40, r)
+    //         mstore(0x60, s)
+    //         let t := staticcall(gas(), 1, 0x00, 0x80, 0x20, 0x20)
+    //         // If the ecrecover fails, the returndatasize will be 0x00,
+    //         // `owner` will be checked if it equals the hash at 0x00,
+    //         // which evaluates to false (i.e. 0), and we will revert.
+    //         // If the ecrecover succeeds, the returndatasize will be 0x20,
+    //         // `owner` will be compared against the returned address at 0x20.
+    //         if iszero(eq(mload(returndatasize()), owner)) {
+    //             mstore(0x00, 0xddafbaef) // `InvalidPermit()`.
+    //             revert(0x1c, 0x04)
+    //         }
+    //         // Increment and store the updated nonce.
+    //         sstore(nonceSlot, add(nonceValue, t)) // `t` is 1 if ecrecover succeeds.
+    //         // Compute the allowance slot and store the value.
+    //         // The `owner` is already at slot 0x20.
+    //         mstore(0x40, or(shl(160, _ALLOWANCE_SLOT_SEED), spender))
+    //         sstore(keccak256(0x2c, 0x34), value)
+    //         // Emit the {Approval} event.
+    //         log3(add(m, 0x60), 0x20, _APPROVAL_EVENT_SIGNATURE, owner, spender)
+    //         mstore(0x40, m) // Restore the free memory pointer.
+    //         mstore(0x60, 0) // Restore the zero pointer.
+    //     }
+    // }
 
     /// @dev Returns the EIP-712 domain separator for the EIP-2612 permit.
     function DOMAIN_SEPARATOR() public view virtual returns (bytes32 result) {

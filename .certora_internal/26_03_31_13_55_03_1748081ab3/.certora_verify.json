@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "WETH",
+    "specfile": "/Users/triady-mac/Documents/Coding/RareSkill-CertoraProver2/certora/specs/WETH_Solady.spec",
+    "specfileOrigRelpath": "certora/specs/WETH_Solady.spec",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

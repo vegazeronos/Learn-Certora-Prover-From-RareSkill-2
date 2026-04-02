@@ -3,15 +3,13 @@ pragma solidity ^0.8.25;
 
 /// @title A simple voting contract
 contract Voting {
-
     // `hasVoted[user]` is true if the user voted.
     mapping(address => bool) public hasVoted;
 
-    uint256 public votesInFavor;  // keep the count of votes in favor
+    uint256 public votesInFavor; // keep the count of votes in favor
 
-    uint256 public votesAgainst;  // keep the count of votes against
-    uint256 public totalVotes;    // keep the count of total votes cast
-
+    uint256 public votesAgainst; // keep the count of votes against
+    uint256 public totalVotes; // keep the count of total votes cast
 
     /// @notice Allows a user to vote in favor of the proposal.
     function voteInFavor() external {
@@ -32,6 +30,4 @@ contract Voting {
         votesAgainst += 1;
         totalVotes += 1;
     }
-    
-    
 }
