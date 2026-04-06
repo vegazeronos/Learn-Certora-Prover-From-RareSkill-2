@@ -1,0 +1,13 @@
+{
+    "topics": [
+        {
+            "name": "type_check",
+            "messages": [
+                {
+                    "message": "Error in spec file (ERC721Transfer.spec:236:19): Syntax error: unexpected token near `=`",
+                    "location": []
+                }
+            ]
+        }
+    ]
+}
